@@ -13,7 +13,8 @@ class Solution:
         
         # 2nd pass: Verify candidates
         res = []
+        n = len(nums)
         for num in majority_map:
-            if nums.count(num) > len(nums) // 3:
+            if nums.count(num) > n // 3:
                 res.append(num)
         return res

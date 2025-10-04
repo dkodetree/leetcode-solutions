@@ -6,17 +6,17 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # Step 1: Detect the Cycle
+        # Step 1: Detect the cycle
         slow, fast = head, head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            if slow == fast:
-                break   # cycle detected  
-        else:
-            return None
-
-        # Step 2: Find the start node of the Cycle
+            if slow == fast: 
+                break   # cycle detected
+        else: # else runs only if the while loop ends naturally without 'break'
+            return None # no cycle
+        
+        # Step 2: Find the start node of the cycle
         slow1 = head
         while slow != slow1:
             slow = slow.next

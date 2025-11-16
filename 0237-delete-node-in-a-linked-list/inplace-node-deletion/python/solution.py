@@ -12,4 +12,4 @@ class Solution:
         """
         node.val = node.next.val    # Copy next node's value
         node.next = node.next.next  # Skip next node
-        # Python GC automatically frees memory of the deleted node
+        # Python's garbage collector (GC) automatically frees memory of the skipped node

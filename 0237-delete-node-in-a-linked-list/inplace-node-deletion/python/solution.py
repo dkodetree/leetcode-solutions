@@ -10,5 +10,6 @@ class Solution:
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        node.val = node.next.val
-        node.next = node.next.next
+        node.val = node.next.val    # Copy next node's value
+        node.next = node.next.next  # Skip next node
+        # Python GC automatically frees memory of the deleted node

@@ -20,6 +20,8 @@ class Solution:
             # Null nodes are automatically covered
             if not node:
                 return COVERED
+
+            # Post-order traversal- so process children first
             left_status = dfs(node.left)
             right_status = dfs(node.right)
 

@@ -9,7 +9,7 @@ class Solution:
         res = []
         path = []
 
-        def find_paths(node, remaining_sum): #DFS with Backtracking
+        def find_paths(node, remaining_sum):
             if not node:
                 return
             path.append(node.val)
@@ -18,7 +18,7 @@ class Solution:
             else:
                 find_paths(node.left, remaining_sum - node.val) 
                 find_paths(node.right, remaining_sum - node.val) 
-            path.pop() # backtrack
+            path.pop() # backtrack the path
 
         find_paths(root, targetSum)
         return res

@@ -18,7 +18,7 @@ class Solution:
             else:
                 find_paths(node.left, remaining_sum - node.val) 
                 find_paths(node.right, remaining_sum - node.val) 
-            path.pop() # backtrack the path
+            path.pop()     # Undo path change
 
         find_paths(root, targetSum)
         return res

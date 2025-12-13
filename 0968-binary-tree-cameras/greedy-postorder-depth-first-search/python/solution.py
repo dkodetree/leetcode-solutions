@@ -9,7 +9,7 @@ class Solution:
         # Status Constants
         HAS_CAM = 1     # node has a camera
         COVERED = 2     # node is covered (by child)
-        NEEDS_COV = 0   # node is not covered
+        NEEDS_COV = 3   # node is not covered
 
         cameras = 0  # camera counter
 

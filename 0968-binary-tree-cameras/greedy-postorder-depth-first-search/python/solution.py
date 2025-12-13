@@ -7,9 +7,9 @@
 class Solution:
     def minCameraCover(self, root: Optional[TreeNode]) -> int:
         # Status Constants
-        NEEDS_CAM = 0   # node is not covered
-        COVERED = 1     # node is covered (by child)
-        HAS_CAM = 2     # node has a camera
+        HAS_CAM = 1     # node has a camera
+        COVERED = 2     # node is covered (by child)
+        NEEDS_COV = 0   # node is not covered
 
         cameras = 0  # camera counter
 
@@ -26,7 +26,7 @@ class Solution:
             right_status = dfs(node.right)
 
             # If any child needs a camera, then place camera at this node
-            if left_status == NEEDS_CAM or right_status == NEEDS_CAM:
+            if left_status == NEEDS_COV or right_status == NEEDS_COV:
                 cameras += 1
                 return HAS_CAM
 
@@ -35,6 +35,6 @@ class Solution:
                 return COVERED
             
             # Otherwise, node is not covered
-            return NEEDS_CAM
+            return NEEDS_COV
         
-        return cameras + 1 if dfs(root) == NEEDS_CAM else cameras
+        return cameras + 1 if dfs(root) == NEEDS_COV else cameras

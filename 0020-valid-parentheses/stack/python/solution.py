@@ -3,11 +3,11 @@ class Solution:
         bracket_mapping = { "]": "[", ")": "(", "}": "{"}  # close -> open
         stack = []
 
-        for ch in s:
-            if ch in bracket_mapping.values():  # open
-                stack.append(ch)
-            else:   # close
-                if stack and stack[-1] == bracket_mapping[ch]:
+        for ele in s:
+            if ele in bracket_mapping.values():  # open
+                stack.append(ele)
+            else:                                # close
+                if stack and stack[-1] == bracket_mapping[ele]:
                     stack.pop()
                 else:
                     return False

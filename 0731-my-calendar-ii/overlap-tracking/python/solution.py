@@ -2,7 +2,7 @@ class MyCalendarTwo:
 
     def __init__(self):
         self.calendar = []  # Stores all booked events
-        self.overlaps = []  # Stores overlapping portins of booked events (double-booking portions)
+        self.overlaps = []  # Stores overlapping portions of booked events (double-booking portions)
 
     def book(self, event_start: int, event_end: int) -> bool:
         # If new event overlaps with the existing overlapping portions, then don't book

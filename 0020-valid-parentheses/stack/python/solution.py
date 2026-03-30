@@ -1,15 +1,15 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        bracket_mapping = { "]": "[", ")": "(", "}": "{"}  # close -> open
-        stack = []
+        bracket_map = { "]": "[", ")": "(", "}": "{"}  # close -> open
+        open_bracket_stack = []
 
         for ele in s:
-            if ele in bracket_mapping:      # close                        
-                if stack and stack[-1] == bracket_mapping[ele]:
-                    stack.pop()
+            if ele in bracket_map:      # close                        
+                if open_bracket_stack and open_bracket_stack[-1] == bracket_map[ele]:
+                    open_bracket_stack.pop()
                 else:
                     return False
             else:
-                stack.append(ele)       # open
+                open_bracket_stack.append(ele)       # open
 
-        return not stack
+        return not open_bracket_stack

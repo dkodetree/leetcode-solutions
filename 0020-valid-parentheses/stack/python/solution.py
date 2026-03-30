@@ -4,12 +4,12 @@ class Solution:
         stack = []
 
         for ele in s:
-            if ele in bracket_mapping.values():  # open
-                stack.append(ele)
-            else:                                # close
+            if ele in bracket_mapping:      # close                        
                 if stack and stack[-1] == bracket_mapping[ele]:
                     stack.pop()
                 else:
                     return False
-        
+            else:
+                stack.append(ele)       # open
+
         return not stack

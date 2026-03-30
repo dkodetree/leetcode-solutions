@@ -1,22 +1,22 @@
 class Solution {
     public boolean isValid(String s) {
-        HashMap<Character, Character> bracketMapping = new HashMap<>(); // close -> open
-        bracketMapping.put(')', '(');
-        bracketMapping.put('}', '{');
-        bracketMapping.put(']', '[');
+        HashMap<Character, Character> bracketMap = new HashMap<>(); // close -> open
+        bracketMap.put(')', '(');
+        bracketMap.put('}', '{');
+        bracketMap.put(']', '[');
 
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> openBracketStack = new Stack<>();
         
         for (char ele : s.toCharArray()) {
-            if (bracketMapping.containsKey(ele)) {  // close
-                if (stack.isEmpty() || stack.pop() != bracketMapping.get(ele)) {
+            if (bracketMap.containsKey(ele)) {  // close
+                if (openBracketStack.isEmpty() || openBracketStack.pop() != bracketMap.get(ele)) {
                     return false;
                 }
             }
-            else {      // Open
-                stack.push(ele);
+            else {      // open
+                openBracketStack.push(ele);
             }
         }
-        return stack.isEmpty();
+        return openBracketStack.isEmpty();
     }
 }

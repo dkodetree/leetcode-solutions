@@ -1,15 +1,19 @@
 class RecentCounter:
 
     def __init__(self):
-        self.recent_counter = collections.deque()
+        self.requests = collections.deque()
 
     def ping(self, t: int) -> int:
-        self.recent_counter.append(t)
+        # Add new request timestamp
+        self.requests.append(t)
 
-        while (self.recent_counter[0] < t - 3000):
-            self.recent_counter.popleft()
+        # Remove timestamps older than t - 3000
+        while (self.requests[0] < t - 3000):
+            self.requests.popleft()
         
-        return len(self.recent_counter)
+        # Queue size represents the number of pings in the range [t-3000, t]
+        return len(self.requests)
+
 
 # Your RecentCounter object will be instantiated and called as such:
 # obj = RecentCounter()

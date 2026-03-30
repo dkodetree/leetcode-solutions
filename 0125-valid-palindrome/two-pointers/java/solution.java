@@ -13,10 +13,10 @@ class Solution {
             else if (!Character.isLetterOrDigit(charRight)) {
                 right--;
             } 
-            else {
-                if (Character.toLowerCase(charLeft) != Character.toLowerCase(charRight)) {
+            else if (Character.toLowerCase(charLeft) != Character.toLowerCase(charRight)) {
                     return false;
-                }
+            }
+            else {
                 left++;
                 right--;
             }

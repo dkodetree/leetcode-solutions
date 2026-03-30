@@ -5,14 +5,13 @@ public:
         int right = s.length() - 1;
 
         while (left < right) {
-            if (!std::isalnum(static_cast<unsigned char>(s[left]))) {
+            if (!isalnum(s[left])) {
                 left++;
             } 
-            else if (!std::isalnum(static_cast<unsigned char>(s[right]))) {
+            else if (!isalnum(s[right])) {
                 right--;
             } 
-            else if (std::tolower(static_cast<unsigned char>(s[left])) != 
-                     std::tolower(static_cast<unsigned char>(s[right]))) {
+            else if (tolower(s[left]) != tolower(s[right])) {
                 return false;
             } 
             else {

@@ -10,7 +10,7 @@ class Solution:
 
             if nums[mid] < target:
                 return binary_search(mid + 1, right)
-            elif nums[mid] > target:
+            if nums[mid] > target:
                 return binary_search(left, mid - 1)
             return mid
         

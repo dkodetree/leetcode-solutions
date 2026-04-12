@@ -3,7 +3,8 @@ public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         unordered_set<int> window;
         int left = 0; 
-        
+
+        // num is the element at the right pointer
         for (int num : nums) { 
             if (window.count(num)) { 
                 return true; 

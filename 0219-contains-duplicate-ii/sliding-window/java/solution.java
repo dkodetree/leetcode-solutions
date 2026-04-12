@@ -3,6 +3,7 @@ class Solution {
         Set<Integer> window = new HashSet<>();
         int left = 0;
 
+        // num is the element at the right pointer
         for (int num : nums) { 
             if (window.contains(num)) { 
                 return true;

@@ -3,12 +3,13 @@ class Solution:
         window = set()
         left = 0
 
-        for num in nums:
+        for num in nums:    # num is the element at the right pointer
             if num in window:
                 return True
             window.add(num)
-            
+
             if len(window) > k:
                 window.remove(nums[left])
                 left += 1
+
         return False

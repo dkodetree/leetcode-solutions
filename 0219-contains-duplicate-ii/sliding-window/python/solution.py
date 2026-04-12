@@ -7,6 +7,7 @@ class Solution:
             if num in window:
                 return True
             window.add(num)
+            
             if len(window) > k:
                 window.remove(nums[left])
                 left += 1

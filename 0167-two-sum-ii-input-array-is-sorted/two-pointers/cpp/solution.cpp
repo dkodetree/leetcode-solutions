@@ -7,12 +7,15 @@ public:
         while (left < right) {
             int cur_sum = numbers[left] + numbers[right];
 
-            if (cur_sum > target) 
+            if (cur_sum > target) {
                 right--;
-            else if (cur_sum < target)
+            }
+            else if (cur_sum < target) {
                 left++;
-            else
+            }
+            else {
                 return {left + 1, right + 1};
+            }
         }
         return {};
     }

@@ -5,7 +5,7 @@ class Solution:
 
         res = []
         for i in range(length):
-            # Its impossible to get a triplet summing to 0 after the smallest number becomes +ve
+            # Its impossible to get a triplet summing to 0 after the first number becomes +ve
             if nums[i] > 0: 
                 break
 
@@ -22,8 +22,7 @@ class Solution:
                 elif cur_sum > 0:
                     right -= 1
                 else:
-                    # Found a valid triplet
-                    res.append([nums[i], nums[left], nums[right]]) 
+                    res.append([nums[i], nums[left], nums[right]]) # Found a valid triplet
 
                     # Move both pointers and skip duplicates
                     left += 1

@@ -1,10 +1,14 @@
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
         length = len(nums)
 
         res = []
         for i in range(length):
+            # Its impossible to get a triplet summing to 0 after the smallest number becomes +ve
+            if nums[i] > 0: 
+                break
+
             # Skip duplicates for first number
             if i > 0 and nums[i] == nums[i - 1]:
                 continue    
@@ -14,17 +18,9 @@ class Solution:
                 cur_sum = nums[i] + nums[left] + nums[right]
 
                 if cur_sum < 0:
-                    # Move left and skip duplicates for second number
                     left += 1
-                    while left < right and nums[left] == nums[left - 1]:
-                        left += 1
-
                 elif cur_sum > 0:
-                    # Move right and skip duplicates for the third number
                     right -= 1
-                    while left < right and nums[right] == nums[right + 1]:
-                        right -= 1
-
                 else:
                     # Found a valid triplet
                     res.append([nums[i], nums[left], nums[right]]) 
@@ -36,5 +32,4 @@ class Solution:
                         left += 1
                     while left < right and nums[right] == nums[right + 1]:
                         right -= 1
-        
         return res

@@ -20,11 +20,11 @@ class Solution:
 
             buckets[bucket_id] = num    # Add current num to its bucket in the sliding window
 
-            # Ensure window size does not exceed indexDiff, by removing the oldest number if needed (sliding window)
+            # Ensure sliding window size does not exceed indexDiff, by removing the oldest number if needed
             if right - left >= indexDiff:
-                old_num = nums[left]
-                old_bucket_id = old_num // bucket_size
-                del buckets[old_bucket_id]
+                oldest_num = nums[left]
+                oldest_bucket_id = oldest_num // bucket_size
+                del buckets[oldest_bucket_id]
                 left += 1
 
         return False

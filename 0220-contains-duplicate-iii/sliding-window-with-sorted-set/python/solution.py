@@ -6,7 +6,6 @@ class Solution:
             return False
 
         window = SortedSet() # Maintain a sorted sliding window
-
         left = 0
         for num in nums:
             # Find the smallest number in the window that is ≥ (num - valueDiff), as a potential nearby almost duplicate
@@ -17,7 +16,7 @@ class Solution:
                 return True
 
             window.add(num)
-            # Ensure window size does not exceed indexDiff
+            # Ensure window size does not exceed indexDiff. Note: Duplicates are handled by the early return above.
             if len(window) > indexDiff:
                 window.remove(nums[left])
                 left += 1

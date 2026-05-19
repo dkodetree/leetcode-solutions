@@ -5,7 +5,7 @@ public:
             return false;
         }
 
-        set<long long> window;  // maintains sorted order
+        set<long long> window;  // maintains a sorted sliding window
         int left = 0;
         for (long long num : nums) {
             // Find the smallest number in the window that is ≥ (num - valueDiff), as a potential nearby almost duplicate

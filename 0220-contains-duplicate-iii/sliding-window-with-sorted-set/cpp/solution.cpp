@@ -17,7 +17,7 @@ public:
             }
                     
             window.insert(num);
-            // Ensure window size does not exceed indexDiff
+            // Ensure window size does not exceed indexDiff. Note: Duplicates are handled by the early return above.
             if (window.size() > indexDiff) { 
                 window.erase(nums[left]);
                 left++;

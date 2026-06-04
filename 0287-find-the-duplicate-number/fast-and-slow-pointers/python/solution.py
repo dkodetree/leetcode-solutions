@@ -8,7 +8,7 @@ class Solution:
             if slow == fast:
                 break
 
-        # Phase 1: Find entrance to the cycle
+        # Phase 2: Find entrance to the cycle (the duplicate number)
         slow1 = 0
         while slow != slow1:
             slow = nums[slow]

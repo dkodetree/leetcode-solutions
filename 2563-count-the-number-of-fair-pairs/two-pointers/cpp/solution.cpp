@@ -6,7 +6,7 @@ public:
     }
 
 private:
-    // Helper to count pairs with sum less than or equal to upperBound
+    // Helper to count pairs with sum less than or equal to upper_bound
     long long countPairs(const vector<int>& nums, int upper_bound) {
         long long count = 0;
         int left = 0;

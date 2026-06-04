@@ -9,7 +9,7 @@ public:
             fast = nums[nums[fast]];
         } while (slow != fast);
 
-        // Phase 2: Find entrance to the cycle
+        // Phase 2: Find entrance to the cycle (the duplicate number)
         int slow1 = 0;
         while (slow != slow1) {
             slow = nums[slow];

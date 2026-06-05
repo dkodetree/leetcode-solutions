@@ -13,6 +13,6 @@ class Solution:
                 idx += 1
             elif nums[idx] == 1: # No swap needed for 1
                 idx += 1
-            else:
+            else:    # nums[idx] == 2
                 nums[idx], nums[right] = nums[right], nums[idx] # Swap with right
                 right -= 1

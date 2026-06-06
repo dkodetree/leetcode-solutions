@@ -42,7 +42,7 @@ private:
         if (left_status == HAS_CAM || right_status == HAS_CAM) { 
             return COVERED; 
         }
-        // Otherwise node is not covered
+        // Otherwise current node is not covered
         return NEEDS_COV; 
     }
 };

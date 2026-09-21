@@ -25,7 +25,7 @@ class Solution {
             TreeNode cur = stack.pop();
             if (cur != null) {
                 result.add(cur.val);
-                if (cur.right != null)  stack.push(cur.right);
+                if (cur.right != null)  stack.push(cur.right);    // Push right first so that left sits on top and gets popped/processed first
                 if (cur.left != null)   stack.push(cur.left);
             }
         }

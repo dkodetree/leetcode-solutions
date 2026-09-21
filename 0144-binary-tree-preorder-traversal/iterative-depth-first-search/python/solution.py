@@ -13,6 +13,6 @@ class Solution:
             cur = stack.pop()
             if cur:
                 result.append(cur.val)
-                stack.append(cur.right)
+                stack.append(cur.right)    # Push right first so that left sits on top and gets popped/processed first
                 stack.append(cur.left)
         return result

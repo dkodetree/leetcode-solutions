@@ -13,6 +13,6 @@ class Solution:
            cur = stack.pop()
            if cur:
                result.append(cur.val)
-               stack.append(cur.left)
+               stack.append(cur.left)    # Push left first so that right sits on top and gets popped/processed first
                stack.append(cur.right)
-        return result[::-1]          # Reverse to get postorder
+        return result[::-1]          # Reverse to convert root-right-left into left-right-root (i.e. postorder)

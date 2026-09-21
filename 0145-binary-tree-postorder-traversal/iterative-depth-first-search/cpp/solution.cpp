@@ -21,7 +21,7 @@ public:
             stack.pop_back();
             if (cur) {
                 result.push_back(cur->val);
-                stack.push_back(cur->left);
+                stack.push_back(cur->left); // Push left first so that right sits on top and gets popped/processed first
                 stack.push_back(cur->right);
             }
         }

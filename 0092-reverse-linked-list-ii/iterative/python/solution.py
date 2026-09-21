@@ -6,7 +6,7 @@
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         # Dummy node to simplify edge cases
-        dummy = ListNode(0, head) 
+        dummy = ListNode(0, head) # dummy on heap
         left_prev = dummy
 
         # Move left_prev to the node just before "left"

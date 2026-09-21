@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         // Dummy node to simplify edge cases
-        ListNode* dummy = new ListNode(0, head);
+        ListNode* dummy = new ListNode(0, head); // dummy on heap
         ListNode* left_prev = dummy;
 
         // Move left_prev to the node just before "left"
